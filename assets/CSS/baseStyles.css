@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* COLORS */
+  --darkBlue: rgb(16, 14, 113);
+  --basicGoldenYellow: rgb(207, 200, 0);
+  --basicWhite: rgb(255, 255, 255);
+  --basicBlack: rgb(0, 0, 0);
+  --basicGray: rgb(48, 48, 48);
+  --mediumGray: rgba(255, 255, 255, 0);
+  --lightGreen: rgb(105, 238, 78);
+  --lightOrange: rgb(237, 159, 13);
+  --salmonPink: rgb(255, 109, 123);
+  --lightPurple: rgb(167, 0, 176);
+  --acquaBlue: rgb(0, 209, 220);
+  --moonSkyBlue: rgb(42, 18, 196);
+
+  /* EFFECTS */
+  --glassEffect: rgba(255, 255, 255, 0.3);
+
+  /* To apply:
+    background-color: var(--YourColorTitle);
+  */
+}
+
+.imageArea {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.imageWrapperArea {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imageWrapperArea:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 180%;
+  height: 100%;
+  width: 100%;
+  background: var(--glassEffect);
+  z-index: 1;
+  transform: skew(45deg);
+  transition: 0.5s;
+}
+
+.imageWrapperArea:hover:before {
+  left: -180%;
+}
+
+.imageWrapperArea img {
+  height: 400px;
+  width: 300px;
+  filter: grayscale(100%);
+  transition: 2s;
+}
+
+.imageWrapperArea:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.imageWrapperArea h2 {
+  background: var(--salmonPink);
+  font-family: Comic Sans MS, sans-serif;
+  color: var(--basicWhite);
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: perspective(400px) rotateY(90deg);
+  transform-origin: right;
+  transition: 1s;
+}
+
+.imageWrapperArea:hover h2 {
+  transform: perspective(400px) rotateY(0deg);
+}
+
+.imageWrapperArea ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--mediumGray);
+}
+
+.imageWrapperArea ul li {
+  background: var(--basicGray);
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  transform: perspective(800px) rotateY(90deg);
+  transition: 0.5s;
+  transform-origin: left;
+}
+
+.imageWrapperArea:hover ul li {
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.imageWrapperArea:hover ul li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.imageWrapperArea:hover ul li:nth-child(2) {
+  transition-delay: 0.6s;
+}
+
+.imageWrapperArea:hover ul li:nth-child(3) {
+  transition-delay: 0.8s;
+}
+
+.imageWrapperArea:hover ul li:nth-child(4) {
+  transition-delay: 1s;
+}
+
+.imageWrapperArea ul li a {
+  color: var(--salmonPink);
+  background: rgba(255, 255, 255, 0);
+}
+
+.imageWrapperArea ul li i {
+  color: var(--salmonPink);
+  background: rgba(255, 255, 255, 0);
+}
+
+.imageWrapperArea ul li i:hover {
+  color: var(--basicWhite);
+  background: rgba(255, 255, 255, 0);
+}
